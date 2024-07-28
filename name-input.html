@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Your Name</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Enter Your Name</h1>
+        </div>
+        <div class="message">
+            <p>Please enter your name below to personalize your Eid greeting:</p>
+            <input type="text" id="nameInput" class="input-field" placeholder="Your Name">
+        </div>
+        <div class="footer">
+            <button class="share-button" onclick="submitName()">Submit</button>
+            <button class="whatsapp-button" onclick="goBack()">Back</button>
+        </div>
+    </div>
+
+    <script>
+        function submitName() {
+            const name = document.getElementById('nameInput').value;
+            if (name) {
+                localStorage.setItem('userName', name);
+                alert('Your name has been saved!');
+                window.location.href = 'index.html';
+            } else {
+                alert('Please enter your name.');
+            }
+        }
+
+        function goBack() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
